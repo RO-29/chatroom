@@ -6,8 +6,8 @@ var express = require('express'),
 
 app.use('/css', express.static(__dirname + '/css'));
 app.use('/js', express.static(__dirname + '/js'));
-
-server.listen(8081);
+port = Number(process.env.PORT || 8081)
+server.listen(port);
 
 app.get('/',function(req,res){
     res.sendFile(__dirname + '/index.html')
